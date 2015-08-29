@@ -25,7 +25,7 @@ module.exports = function(app) {
     });
   });
 
-  usersRouter.get('/', function(req, res) {
+   usersRouter.get('/', function(req, res) {
     res.send({
       'users': []
     });

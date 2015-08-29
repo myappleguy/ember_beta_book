@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
-      Welcome to EmberNote
+      <div class='bot'>
+        <div class='happy'>
+          Welcome to EmberNote
+        </div>
+      </div>
     </div>
     <div class="col-md-10">
-      {{#link-to 'register'}}register{{/link-to}}
+      {{#if user}}
+        Hello, {{user.name}}
+        {{#link-to 'register'}}register{{/link-to}}&nbsp;
+      {{else}}
+        {{#link-to 'login'}}login{{/link-to}}
+      {{/if}}
     </div>
-    <div class="row">
-      <div>
-        {{outlet}}
-      </div>
+  </div>
+    <div>
+      {{outlet}}
     </div>
   </div>
 </div>
