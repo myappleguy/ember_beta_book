@@ -8,7 +8,7 @@ module.exports = function(app) {
 
   usersRouter.post('/', function(req, res) {
     userDB.find({}).sort({id : -1}).limit(1).exec(function(err, users) {
-      if(users.length != 0)
+      if(users.length !== 0)
         req.body.user.id = users[0].id +1;
       else
         req.body.user.id = 1;
@@ -26,9 +26,11 @@ module.exports = function(app) {
   });
 
    usersRouter.get('/', function(req, res) {
-    res.send({
-      'users': []
-    });
+     userDB.find(req.query).exec(function(error,users) {
+       res.send({
+         'users': users
+       });
+     });
   });
 
   usersRouter.get('/:id', function(req, res) {

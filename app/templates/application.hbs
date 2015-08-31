@@ -1,13 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-2">
-      <div class='bot'>
-        <div class='happy'>
-          Welcome to EmberNote
-        </div>
-      </div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>
+      Welcome to EmberNote
     </div>
-    <div class="col-md-10">
+    <div class='col-md-10'>
       {{#if user}}
         Hello, {{user.name}}
         {{#link-to 'register'}}register{{/link-to}}&nbsp;
@@ -16,8 +12,7 @@
       {{/if}}
     </div>
   </div>
-    <div>
-      {{outlet}}
-    </div>
+  <div class='row'>
+    {{outlet}}
   </div>
 </div>
