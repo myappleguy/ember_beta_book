@@ -6,7 +6,7 @@
     </div>
     <div>
       <ul>
-        {{#each model as |notebook}}
+        {{#each model as |notebook|}}
           {{#link-to 'notebooks.notes' notebook.id}}
             <li>{{notebook.title}}</li>
           {{/link-to}}
